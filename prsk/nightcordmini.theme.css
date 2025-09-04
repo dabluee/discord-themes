@@ -1,8 +1,8 @@
 /**
  * @name Nightcord Mini
- * @description Changes the Discord logo and the default accent color
+ * @description Change the Discord logo and the main color to match any Project Sekai group.
  * @author dabluee
- * @version 1.0.0
+ * @version 1.0.2
  * @source 
  * @authorId 
 */
@@ -105,6 +105,7 @@ body {
 
 
 
+/* Custom blurple color */
 @property --recolor {
     syntax: 'on | off';
     inherits: false;
@@ -140,7 +141,7 @@ body {
 	.theme-light,
 	body {
 		--blurple:  hsl(from var(--custom-color) h s l) !important;
-		--blurple-50: hsl(235 86% 65%) !important;
+		--blurple-50: hsl(235, 86%, 65%) !important;
 		--blurple-hover: hsl(from var(--blurple) calc(h + 2) calc(s + 4) calc(l - 4)) !important;
 		--blurple-active: hsl(from var(--blurple) calc(h - 2) calc(s + 4) calc(l + 4)) !important;
 
@@ -159,6 +160,7 @@ body {
 		--button-filled-brand-background-active: var(--brand-600);
 		
 	} 
+	
 }
 
 @container body style(--recolor-max: on) and style(--recolor-logo-only: off) {
@@ -172,20 +174,44 @@ body {
 }
 
 @container body style(--recolor-logo-only: on) {
-	.wrapper__6e9f8.selected__6e9f8 .childWrapper__6e9f8, .wrapper__6e9f8:hover .childWrapper__6e9f8 {
+	[class^=wrapper__][class*=selected__] [class^=childWrapper__],
+	[class^=wrapper__]:hover [class^=childWrapper__]{
 		background-color: var(--custom-color);
-	}	
+
+	}
+	:root,
+	body {
+
+		--blurple: hsl(235, 86%, 65%) !important;
+		--blurple-50: var(--blurple) !important;
+		--blurple-hover: hsl(from var(--blurple) calc(h + 2) calc(s + 4) calc(l - 4)) !important;
+		--blurple-active: hsl(from var(--blurple) calc(h - 2) calc(s + 4) calc(l + 4)) !important;
+
+		--bg-brand: var(--blurple) !important;
+		--checkbox-background-checked: var(--blurple) !important;
+		--text-brand: var(--blurple) !important;
+		--brand-500: var(--blurple) !important;
+		--button-filled-brand-background: var(--brand-500);
+
+		--redesign-input-control-selected: color-mix(in oklab,var(--brand-500) 100%,var(--theme-base-color,#000) var(--theme-base-color-amount,0%));
+
+		--brand-560: var(--blurple-hover) !important;
+		--button-filled-brand-background-hover: var(--brand-560);
+
+		--brand-600: var(--blurple-active) !important;
+		--button-filled-brand-background-active: var(--brand-600); 
+	}
 }
 
 
 
+/* Custom dm logo */
 @property --custom-logo {
     syntax: 'on | off';
     inherits: false;
     initial-value: on;
 }
 
-/* Custom dm logo */
 @container body style(--custom-logo: on) {
 	[class^=childWrapper__] > svg:not([class^=favoriteicon_]) {
 		display: none;

@@ -1,7 +1,7 @@
 /**
  * @name UI Tweaks
- * @description Adds a few elements from the old ui into the new one.
- * @author dabluee
+ * @description Combines elements from the new and old ui
+ * @author dablue
  * @version 1.0.0
  * @source 
  * @authorId 
@@ -48,6 +48,32 @@
 	--background-floating: var(--background-base-lowester);
 }
 
+/* Reverting the typing indicator changes */
+.align-chat-input .inTextChannel_b88801.base_b88801 {
+	bottom: 0;
+	align-self: flex-end;
+}
+/* 
+.channelBottomBarArea_f75fb0 {
+	margin-bottom: 16px;
+	margin-top: 12px;
+} */
+
+.align-chat-input .form_f75fb0 {
+    display: flex !important;
+    flex-direction: column;
+}
+
+.align-chat-input .inTextChannel_b88801 .text_b88801 {
+    margin-left: var(--space-8);
+}
+
+.messagesWrapper__36d07,
+.container__2637a {
+mask: none !important;
+}
+
+
 /* Channel colors */
 .container__13cf1 {
     color: var(--channels-header);
@@ -60,11 +86,6 @@
 button.button__67645.enabled__67645:hover,
 span.button__67645.enabled__67645:hover  {
 	background: var(--button-primary-background-hover) !important;
-}
-
-/* DM button */
-.childWrapperNoHoverBg__6e9f8 {
-	background: var(--background-base-low);
 }
 
 
@@ -119,7 +140,6 @@ span.button__67645.enabled__67645:hover  {
     }
 	#guild-list-unread-dms div[style="opacity: 1; height: 40px; transform: scale(1);"]{
 		height: 50px !important;
-        padding-bottom: 2px !important;
 	}
     .stack_dbd263 {
         gap: 9px !important;
@@ -206,10 +226,10 @@ span.button__67645.enabled__67645:hover  {
 		background-color: var(--primary-800);
 	}
     /* Ping and call badges */
-	.wrapper_cc5dd2 > .svg_cc5dd2 .badgeStroke_cc5dd2[id$="lower_badge_masks"] {
+	.wrapper_cc5dd2 > .svg_cc5dd2.shiftSVG_cc5dd2 use[href$="lower_badge_masks"] {
 		transform: translate(7.5%, 7%) !important;
 	}
-	.wrapper_cc5dd2 > .svg_cc5dd2 .badgeStroke_cc5dd2[id$="upper_badge_masks"] {
+	.wrapper_cc5dd2 > .svg_cc5dd2.shiftSVG_cc5dd2 use[href$="upper_badge_masks"] {
 		transform: translate(7.5%, -7%) !important;
 	}
 	svg.placeholderMask__87847 {
@@ -314,8 +334,8 @@ span.button__67645.enabled__67645:hover  {
 /* Now playing area */
 .visual-refresh .base_c48ade .sidebar_c48ade > .panels_c48ade .panel__5dec7 {
 	background: var(--bg-overlay-floating, var(--background-base-lower));
-	padding-top: 3px;
-	padding-bottom: 0px;
+	padding-top: 5px;
+	padding-bottom: 7px;
 }
 
 
