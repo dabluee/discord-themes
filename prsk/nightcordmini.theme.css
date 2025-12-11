@@ -141,7 +141,6 @@ body {
 	.theme-light,
 	body {
 		--blurple:  hsl(from var(--custom-color) h s l) !important;
-		--blurple-50: hsl(235, 86%, 65%) !important;
 		--blurple-hover: hsl(from var(--blurple) calc(h + 2) calc(s + 4) calc(l - 4)) !important;
 		--blurple-active: hsl(from var(--blurple) calc(h - 2) calc(s + 4) calc(l + 4)) !important;
 

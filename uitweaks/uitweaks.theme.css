@@ -1,7 +1,7 @@
 /**
  * @name UI Tweaks
- * @description Combines elements from the new and old ui
- * @author dablue
+ * @description Adds a few elements from the old ui into the new one.
+ * @author dabluee
  * @version 1.0.0
  * @source 
  * @authorId 
@@ -49,15 +49,19 @@
 }
 
 /* Reverting the typing indicator changes */
-.align-chat-input .inTextChannel_b88801.base_b88801 {
+.channelBottomBarArea_f75fb0 {
+	margin-bottom: 15px;
+	margin-top: 15px;
+}
+
+.inTextChannel_b88801.base_b88801 {
 	bottom: 0;
 	align-self: flex-end;
 }
-/* 
-.channelBottomBarArea_f75fb0 {
-	margin-bottom: 16px;
-	margin-top: 12px;
-} */
+
+.chatTypingGradientNotAtBottom__36d07{
+	background: none;
+}
 
 .align-chat-input .form_f75fb0 {
     display: flex !important;
@@ -93,19 +97,19 @@ span.button__67645.enabled__67645:hover  {
 .visual-refresh {
 
     /* Grids */
-    .guilds_c48ade {
+    .guilds__5e434 {
         margin-top: -12px;
     }
-	.base_c48ade {
+	.base__5e434 {
 		background: var(--bg-overlay-5, var(--background-base-lowester));
 	}
-	.base_c48ade .sidebar_c48ade {
+	.base__5e434 .sidebar__5e434 {
         overflow: visible !important;
 	}
-	.base_c48ade .sidebar_c48ade > .guilds_c48ade {
+	.base__5e434 .sidebar__5e434 > .guilds__5e434 {
 		margin-bottom: 0;
 	}
-    .sidebarList_c48ade {
+    .sidebarList__5e434 {
 		border-color: hsl(from var(--app-border-frame) h s l / 0.15);
     }
 
@@ -116,16 +120,16 @@ span.button__67645.enabled__67645:hover  {
 			height: 16px;
 			margin-top: 2px
 		}
-		.refreshIconFill__001a7 {
+		.refreshIconFill__88a69 {
 			fill: transparent;
 			stroke: white;
 			stroke-width: 2;
 			r: 10;
 		}
-		.refreshIconStroke__001a7 {
+		.refreshIconStroke__88a69 {
 			stroke-width: 0;
 		}
-		.refreshIcon__001a7 {
+		.refreshIcon__88a69 {
 			fill: var(--blurple);
 			r: 6
 		}
@@ -273,6 +277,9 @@ span.button__67645.enabled__67645:hover  {
 			margin-left: unset;
 		}
     }
+	.chatGradient__36d07 {
+		display: none;
+	}
 
     /* VC count */
     .wrapper__260e1{
@@ -285,16 +292,29 @@ span.button__67645.enabled__67645:hover  {
 		border-right-color: var(--background-base-lowester);
 	}
 
-    /* VC buttons */
+    /* VC Panel */
 	.buttons__37e49 {
 		gap: 2px;
+		margin-right: calc(var(--custom-panels-spacing) - var(--custom-guild-list-padding) - 8px);
+	}
+	.avatarWrapper__37e49 {
+		margin-left: calc(var(--custom-panels-spacing) - var(--custom-guild-list-padding) - 4px);
+	}
+	.container_e131a9 {
+		margin: 10px;
+	}
+	.micButtonParent__37e49 .buttonChevron__37e49 {
+		display: none;
+	}
+	button.button__67645 {
+    	border-radius: var(--radius-sm);
 	}
 
     /* Slider buttons */
 	.slider_a562c8 .barFill_a562c8 {
 		background-color: var(--bg-brand)
 	}
-	.container__87bf1.checked__87bf1{
+	.container__3f21e.checked__3f21e{
 		background-color: var(--bg-brand) !important;
 	}
 
@@ -312,15 +332,14 @@ span.button__67645.enabled__67645:hover  {
 
 
 /* Profile Bar */
-.visual-refresh .panels_c48ade {
+.visual-refresh .panels__5e434 {
     --custom-panels-spacing: 32px;
     background: var(--bg-overlay-floating, var(--background-base-lower));
     border: 1px solid var(--border-faint);
     border-radius: var(--radius-sm);
     bottom: 8px;
     box-sizing: border-box;
-    justify-content: space-between;
-    left: calc(51px + var(--custom-panels-spacing));
+    left: calc(50px + var(--custom-panels-spacing));
     position: absolute;
     width: calc(100% - var(--custom-panels-spacing) * 2.8);
 }
@@ -332,43 +351,41 @@ span.button__67645.enabled__67645:hover  {
 	margin: -2px !important;
 } 
 /* Now playing area */
-.visual-refresh .base_c48ade .sidebar_c48ade > .panels_c48ade .panel__5dec7 {
+.visual-refresh .base__5e434 .sidebar__5e434 > .panels__5e434 .panel__5dec7 {
 	background: var(--bg-overlay-floating, var(--background-base-lower));
-	padding-top: 5px;
-	padding-bottom: 7px;
+	margin: 10px;
+	padding-bottom: 10px;
 }
 
 
 /* Top Bar */
+.platform-win .base__5e434 {
+	padding-top: 0px;
+}
 .bar_c38106 .trailing_c38106 .iconWrapper__9293f {
     width: 24px;
     height: 24px;
 }
-.bar_c38106 .trailing_c38106 .iconWrapper__9293f .icon__9293f {
+.bar_c38106 .trailing_c38106 .iconWrapper__9293f .icon__9293f,
+.clickable_c99c29 {
     width: 16px;
     height: 16px;
 	top: 0px;
 	bottom: 0px;
 }
-.bar_c38106 .trailing_c38106 .iconWrapper__9293f > .svg__2338f foreignObject[mask="url(#svg-mask-header-bar-badge-bottom)"]{
-    width: 16px;
-    height: 16px;
-	y: 1.5;
-}
-.bar_c38106 .trailing_c38106 .iconWrapper__9293f > .iconBadge__9293f {
-	bottom: 4px !important;
-	right: 5.5px !important;
-    width: 7px;
+.badge_c99c29 {
+    bottom: 0px;
     height: 7px;
+    right: 4px;
+    width: 7px;
 }
-
-.visual-refresh .title__85643 {
+.visual-refresh .title_edbb22 {
     display: none;
 }
 
 
 /* Server list, mostly from milbits and THEYAKUZI */
-.base_c48ade .sidebar_c48ade > .guilds_c48ade {
+.base__5e434 .sidebar__5e434 > .guilds__5e434 {
     width: 75px;
     background: var(--background-base-lowester);
 	.scroller_ef3116 {
@@ -416,11 +433,11 @@ span.button__67645.enabled__67645:hover  {
 		box-shadow: unset;
 	}
 }
-.sidebar_c48ade:after {
+.sidebar__5e434:after {
 	display: none;
 }
 
-.folderIcon__48112{
+.folderHeader__48112{
 	width: 48px;
 	height: 48px;
 }
