@@ -65,7 +65,7 @@ body {
 
 	/* Recolor Discord's Blurple Max: 
 		Copy the hsl numbers from the one you want, this changes every blurple color, most of which you may not see. It can look strange at times so it's recommended to be off. */
-	--recolor-max: off;
+	--recolor-max: on;
 	--h: 239;
 	--s: 40%;
 	--l: 67%;
@@ -141,6 +141,7 @@ body {
 	.theme-light,
 	body {
 		--blurple:  hsl(from var(--custom-color) h s l) !important;
+		/* --blurple-50: var(--blurple) !important; */
 		--blurple-hover: hsl(from var(--blurple) calc(h + 2) calc(s + 4) calc(l - 4)) !important;
 		--blurple-active: hsl(from var(--blurple) calc(h - 2) calc(s + 4) calc(l + 4)) !important;
 
@@ -212,11 +213,11 @@ body {
 }
 
 @container body style(--custom-logo: on) {
-	[class^=childWrapper__] > svg:not([class^=favoriteicon_]) {
+	._6e9f8dce4cc18de3-childWrapper svg {
 		display: none;
 	}
 
-	[class^=childWrapper__]:has( > svg:not([class^=favoriteicon_]))::before {
+	._6e9f8dce4cc18de3-childWrapper:has( > svg)::before {
 		content: '';
 		display: block;
 		position: absolute;

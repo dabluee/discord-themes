@@ -32,6 +32,13 @@
     --channels-default: hsl(from var(--text-primary) calc(h - 25) calc(s + 5) calc(l - 34)) !important;
     --channel-icon: hsl(from var(--channels-default) calc(h + 9) calc(s - 3) calc(l - 8)) !important;
     --channels-header: hsl(from var(--channels-default) calc(h + 2) calc(s - 1) calc(l + 12)) !important;
+	--interactive-background-hover-old:  color-mix(in oklab, hsl(var(--opacity-8-hsl) / 0.0784313725490196) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.0784313725490196) var(--custom-theme-base-color-amount, 0%));
+	--interactive-background-selected-old:  color-mix(in oklab, hsl(var(--opacity-20-hsl) / 0.2) 100%, hsl(var(--custom-theme-base-color-hsl, 0 0% 0%) / 0.2) var(--custom-theme-base-color-amount, 0%));
+	--interactive-background-hover: hsl(from var(--interactive-background-hover-old) h s calc(l - 8));
+	--interactive-background-selected: hsl(from var(--interactive-background-selected-old) h s calc(l - 16));
+	
+    --background-mod-subtle: hsl(var(--opacity-8-hsl) / 0.15) !important;
+
 	--background-code: hsl(from var(--background-base-lower) calc(h - 6) calc(s + 1) calc(l - 3)) !important;
 	/* --border-code: hsl(from var(--background-code) calc(h + 10) calc(s + 7) calc(l - 5)); */
 	--border-code: color-mix(in oklab, var(--neutral-40) 50%, var(--theme-text-color, #000) var(--theme-text-color-amount, 0%)) !important;
